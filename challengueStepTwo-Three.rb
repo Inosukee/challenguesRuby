@@ -1,16 +1,12 @@
 #Initialize challengue Two and Three
 class ValidateNumbers
-  def initialize()
-  end
-
   def arrayValidation
     require "./challengueStepOne.rb"
 
     m = ReadFiles.new()
     numbers = m.readFile()
 
-    index = numbers.length
-    for x in (0..(index - 1))
+    for x in (0..(numbers.length - 1))
       temp = numbers[x].chars
       multiplicador = 9
       valide = 0
@@ -35,6 +31,6 @@ class ValidateNumbers
         numbers[x] = "#{numbers[x]} ERR"
       end
     end
-    puts numbers
+    return numbers
   end
 end

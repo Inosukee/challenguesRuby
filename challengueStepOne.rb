@@ -1,8 +1,5 @@
 #Initialize challengue One
 class ReadFiles
-  def initialize()
-  end
-
   def readFile()
     #The file contenido.txt it's on the root folder proyect
     content = File.read("contenido.txt")
