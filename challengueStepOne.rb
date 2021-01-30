@@ -39,7 +39,7 @@ class ReadFiles
       init = 0
       for x in (1..9)
         #Found number 1 or 4
-        if array[contFileInit][init] == " " && array[contFileInit][init + 1] == " " && array[contFileInit][init + 2] == " "
+        if array[contFileInit][init + 1] == " "
           if array[contFileInit + 1][init] == " " && array[contFileInit + 1][init + 2] == "|" && array[contFileInit + 2][init + 2] == "|"
             finalNumber = finalNumber + "1"
           else
@@ -57,6 +57,9 @@ class ReadFiles
             else
               finalNumber = finalNumber + "8"
             end
+            #Found number 0
+          elsif array[contFileInit + 1][init] == "|" && array[contFileInit + 1][init + 1] == " " && array[contFileInit + 1][init + 2] == "|" && array[contFileInit + 2][init + 1] == "_" && array[contFileInit + 2][init + 2] == "|" && array[contFileInit + 2][init] == "|"
+            finalNumber = finalNumber + "0"
             #Found number 5 or 6
           elsif array[contFileInit + 1][init] == "|" && array[contFileInit + 1][init + 1] == "_" && array[contFileInit + 2][init + 1] == "_" && array[contFileInit + 2][init + 2] == "|"
             if array[contFileInit + 2][init] == " "
