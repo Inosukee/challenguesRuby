@@ -26,7 +26,7 @@ class DefChars
     end
   end
 
-  def possibleCharAdd(array)
+  def possibleCharAddRem(array)
     #while iterarions < 2
     tempArray = array.chars
     estructur = []
@@ -35,7 +35,6 @@ class DefChars
     conTrue = 0
     numeroRepetido = ""
     valorRemplazado = ""
-
     while iterations < 12
       union = ""
       countplis = 0
@@ -114,6 +113,9 @@ class DefChars
     end
   end
 
+  def searchMissingChar(array)
+  end
+
   def searchChar(numbers)
     for x in (0..(numbers.length - 1))
       temp = numbers[x].chars
@@ -121,10 +123,12 @@ class DefChars
       for val in (9..(temp.length - 1))
         #validar si es un ILL
         if temp[val] == "I"
+          numbers[x].slice!(" ILL")
+          searchMissingChar(numbers[x])
           #validar si es un ERR
         elsif temp[val] == "E"
           numbers[x].slice!(" ERR")
-          possibleCharAdd(numbers[x])
+          possibleCharAddRem(numbers[x])
         end
       end
     end
