@@ -5,9 +5,15 @@ class ValidateNumbers
 
     m = ReadFiles.new()
     numbers = m.readFile()
+    n = validacion(numbers)
+    puts "--------------------Challengue Two-Three-------------------"
+    puts n
+    return n
+  end
 
-    for x in (0..(numbers.length - 1))
-      temp = numbers[x].chars
+  def validacion(array)
+    for x in (0..(array.length - 1))
+      temp = array[x].chars
       multiplicador = 9
       valide = 0
       interrogation = false
@@ -22,15 +28,18 @@ class ValidateNumbers
       end
       #validate If some characters are illegible
       if interrogation
-        numbers[x] = "#{numbers[x]} ILL"
+        array[x] = "#{array[x]} ILL"
         #validate if it is a valid policy number.
       elsif (valide % 11) == 0
-        numbers[x] = "#{numbers[x]}"
+        array[x] = "#{array[x]}"
         #validate if it's not a valid policy number.
       else
-        numbers[x] = "#{numbers[x]} ERR"
+        array[x] = "#{array[x]} ERR"
       end
     end
-    return numbers
+    return array
   end
+
+  #n = ValidateNumbers.new()
+  #n.arrayValidation()
 end

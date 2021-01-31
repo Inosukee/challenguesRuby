@@ -23,7 +23,10 @@ class ReadFiles
       contcaracter = 0
       contexcepcion = 0
     end
-    getNumbers(array, lines.length())
+    result = getNumbers(array, lines.length())
+    puts "-------------------Challengue One--------------------------"
+    puts result
+    return result
   end
 
   def getNumbers(array, length)
