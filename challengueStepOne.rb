@@ -40,8 +40,8 @@ class ReadFiles
       for x in (1..9)
         #Found number 1 or 4
         if array[contFileInit][init + 1].include? " "
-          finalNumber = [array[contFileInit + 1][init], array[contFileInit + 1][init + 2], array[contFileInit + 2][init + 2]] == ([" ", "|", "|"]) ? finalNumber + "1" :
-            finalNumber = [array[contFileInit + 1][init], array[contFileInit + 1][init + 1], array[contFileInit + 1][init + 2], array[contFileInit + 2][init + 2]] == (["|", "_", "|", "|"]) ? finalNumber + "4" : finalNumber + "?"
+          finalNumber = [array[contFileInit + 1][init], array[contFileInit + 1][init + 2], array[contFileInit + 2][init + 2]] == [" ", "|", "|"] ? finalNumber + "1" :
+            [array[contFileInit + 1][init], array[contFileInit + 1][init + 1], array[contFileInit + 1][init + 2], array[contFileInit + 2][init + 2]] == ["|", "_", "|", "|"] ? finalNumber + "4" : finalNumber + "?"
         else
           case
           #Found number 9 or 8
